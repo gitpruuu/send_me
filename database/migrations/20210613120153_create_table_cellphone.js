@@ -6,7 +6,7 @@ exports.up = (knex) =>
     table.string("color", 15).notNullable();
     table.text("found_at", 300);
     table.text("details", 300);
-    table.float("shipping_price", 4, 2).notNullable();
+    table.float("shipping_price").notNullable();
 
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.timestamp("updated_at").defaultTo(knex.fn.now());

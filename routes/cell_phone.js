@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-const CellphoneController = require("../controllers/cell_phone");
+const CellController = require("../controllers/cellPhoneController");
 
-router.get("/:id");
+router.get("/", CellController.getAllPhones);
 
-router.get("/all", CellphoneController.getAllPhones);
+router.post("/add", CellController.insertPhone);
 
 module.exports = router;
