@@ -19,15 +19,14 @@ module.exports = {
   async insertPhone(req, res) {
     try {
       const { brand, model, color, found_at, photos, details, fair_shipp } =
-        req.body;
-      await knex("cellphone").insert({
-        brand,
-        model,
-        color,
-        found_at,
-        details,
-        fair_shipp,
-      });
+        await knex("cellphone").insert({
+          brand,
+          model,
+          color,
+          found_at,
+          details,
+          fair_shipp,
+        });
       return res.status(201).json({
         message: "Cell Phone successfully registered thanks for colaborate <3",
         brand: brand,
