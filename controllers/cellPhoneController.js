@@ -6,34 +6,34 @@ module.exports = {
       const results = await knex("cellphone").select(
         "brand",
         "model",
-        "photos",
         "color ",
         "photos"
       );
+      res.status(200).send(results);
     } catch (error) {
+      res.status(400).send(error);
     } finally {
-      return res.json(results);
+      return res.json({
+        message: "Please try again!",
+      });
     }
   },
 
   async insertPhone(req, res) {
-    try {
-      const { brand, model, color, found_at, photos, details, fair_shipp } =
-        await knex("cellphone").insert({
-          brand,
-          model,
-          color,
-          found_at,
-          details,
-          fair_shipp,
-        });
-      return res.status(201).json({
-        message: "Cell Phone successfully registered thanks for colaborate <3",
-        brand: brand,
-        color: color,
-      });
-    } catch (error) {
-      res.status(400).send(`Error: ${error}`);
-    }
+    const { brand, model, color, found_at, details, fair_shipp } = await knex(
+      "cellphone"
+    ).insert({
+      brand,
+      model,
+      color,
+      found_at,
+      details,
+      fair_shipp,
+    });
+    return res.status(201).json({
+      message: "Cell Phone successfully registered thanks for colaborate <3",
+      color: color,
+    });
+    // res.status(400).send(`Error: ${error}`);
   },
 };

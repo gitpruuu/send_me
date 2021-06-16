@@ -3,13 +3,4 @@
 Devolva, muitas vezes é uma das poucas coisas que a pessoa tem!
 Mas vale 10 Iphones na mão do que 01 bloqueado!
 
-`` js
-phone:{
-brand:"",
-model:"",
-color:"",   
-details: "",
-"photos":""
-fair_shipp: ""
-}``
-
+Protótico consiste em uma aplicação para cadastro e celulares perdidos, o aparelho poderá ser cadastrado e consultado em uma lista para que o dono entre em contato para combinar uma (fair_shipp)
