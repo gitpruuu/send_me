@@ -7,11 +7,11 @@ module.exports = {
         "brand",
         "model",
         "color ",
-        "photos"
       );
       res.status(200).send(results);
     } catch (error) {
       res.status(400).send(error);
+      
     } finally {
       return res.json({
         message: "Please try again!",
@@ -20,9 +20,9 @@ module.exports = {
   },
 
   async insertPhone(req, res) {
-    const { brand, model, color, found_at, details, fair_shipp } = await knex(
-      "cellphone"
-    ).insert({
+    const { brand, model, color, found_at, details, fair_shipp, photos } =
+      req.body;
+    await knex("cellphone").insert({
       brand,
       model,
       color,
@@ -34,6 +34,5 @@ module.exports = {
       message: "Cell Phone successfully registered thanks for colaborate <3",
       color: color,
     });
-    // res.status(400).send(`Error: ${error}`);
   },
 };
