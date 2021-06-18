@@ -29,4 +29,6 @@ Obs: para testes no postman precisa enviar através de POST/form-data para inclu
 
 ### TODO
 
-1.css_style - A descrição estará dentro do card e a interação será parecida com a usabilidade do sistema operacional(Android / IOS)
+1.css_style - A descrição estará dentro do card e a interação será parecida com a usabilidade do sistema operacional(Android / IOS), pode ser um simples formato de botão.
+
+npx create-react-app send_me
