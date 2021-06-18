@@ -9,7 +9,7 @@ router.get("/", CellController.getAllPhones);
 
 router.post(
   "/add",
-  multer(multerConfig).single("photos"),
+  multer(multerConfig).single("file"),
   CellController.insertPhone
 );
 

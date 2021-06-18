@@ -2,7 +2,6 @@ const knex = require("../database");
 
 module.exports = {
   async getAllPhones(req, res) {
-    console.log(req.file);
     try {
       const results = await knex("cellphone").select(
         "brand",
@@ -20,10 +19,8 @@ module.exports = {
   },
 
   async insertPhone(req, res) {
-    const { brand, model, color, found_at, details, photos, fair_shipp } =
-      req.body;
-    const teste = req.body.photos;
-    console.log(teste);
+    const photos = req.file.path;
+    const { brand, model, color, found_at, details, fair_shipp } = req.body;
     await knex("cellphone").insert({
       brand,
       model,
