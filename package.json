@@ -1,6 +1,7 @@
 {
   "name": "send-me",
   "version": "0.0.0",
+  "author": "justgotsolved(JGS)",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
