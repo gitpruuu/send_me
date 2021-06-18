@@ -20,21 +20,24 @@ module.exports = {
   },
 
   async insertPhone(req, res) {
-    const { brand, model, color, found_at, details, fair_shipp } = req.body;
-    const photos = req.file.path;
-    await knex("cellphone").insert({
-      brand,
-      model,
-      color,
-      details,
-      photos,
-      found_at,
-      fair_shipp,
-    });
-    return res.status(201).json({
-      message: "Cell Phone successfully registered thanks for colaborate <3",
-      model,
-      color,
-    });
+    try {
+      const { brand, model, color, found_at, details, fair_shipp } = req.body;
+      const photos = req.file.path ? req.file.path : "empy";
+      await knex("cellphone").insert({
+        brand,
+        model,
+        color,
+        details,
+        photos,
+        found_at,
+        fair_shipp,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      return res.status(201).json({
+        message: "Cell Phone successfully registered thanks for colaborate <3",
+      });
+    }
   },
 };
