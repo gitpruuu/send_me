@@ -22,3 +22,5 @@ json ={
 }
 
 Obs: para testes no postman precisa enviar através de POST/form-data para incluir a foto como valor da chave!
+
+2 - O Frotend será feito em React 
