@@ -6,7 +6,8 @@ module.exports = {
       const results = await knex("cellphone").select(
         "brand",
         "model",
-        "color "
+        "color ",
+        "photos"
       );
       res.status(200).send(results);
     } catch (error) {
@@ -19,8 +20,8 @@ module.exports = {
   },
 
   async insertPhone(req, res) {
-    const photos = req.file.path;
     const { brand, model, color, found_at, details, fair_shipp } = req.body;
+    const photos = req.file.path;
     await knex("cellphone").insert({
       brand,
       model,
@@ -32,7 +33,8 @@ module.exports = {
     });
     return res.status(201).json({
       message: "Cell Phone successfully registered thanks for colaborate <3",
-      color: color,
+      model,
+      color,
     });
   },
 };
